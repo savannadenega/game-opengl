@@ -1,4 +1,12 @@
-﻿LINK : warning LNK4098: defaultlib 'LIBCMT' conflita com uso de outras bibliotecas; use /NODEFAULTLIB:library
+﻿  Game.cpp
+  Program.cpp
+c:\users\savannadenegamachado\source\repos\trabalhoga-ok\game-opengl\jogo\program.cpp(65): warning C4244: 'inicializando': conversão de 'double' para 'GLfloat', possível perda de dados
+  ResourceManager.cpp
+  Shader.cpp
+  SpriteRenderer.cpp
+  Texture2D.cpp
+  Gerando Código...
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflita com uso de outras bibliotecas; use /NODEFAULTLIB:library
 ResourceManager.obj : warning LNK4049: símbolo definido localmente ___glewDeleteProgram importado
 Shader.obj : warning LNK4049: símbolo definido localmente ___glewAttachShader importado
 Shader.obj : warning LNK4049: símbolo definido localmente ___glewCompileShader importado
@@ -28,21 +36,21 @@ SpriteRenderer.obj : warning LNK4049: símbolo definido localmente ___glewVertex
 SpriteRenderer.obj : warning LNK4049: símbolo definido localmente ___glewBindVertexArray importado
 SpriteRenderer.obj : warning LNK4049: símbolo definido localmente ___glewDeleteVertexArrays importado
 SpriteRenderer.obj : warning LNK4049: símbolo definido localmente ___glewGenVertexArrays importado
-glfw3.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(context.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(init.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(input.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(input.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(monitor.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(monitor.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(window.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(window.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(win32_init.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(win32_init.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(win32_monitor.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(win32_time.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(win32_time.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(win32_tls.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(win32_tls.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(win32_window.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(win32_window.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(winmm_joystick.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(winmm_joystick.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glfw3.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(wgl_context.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' não foi encontrado 'glew32s.lib(glew.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\vc120.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'vc110.pdb' não foi encontrado 'SOIL.lib(image_DXT.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-SOIL.lib(image_helper.obj) : warning LNK4099: PDB 'vc110.pdb' não foi encontrado 'SOIL.lib(image_helper.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-SOIL.lib(SOIL.obj) : warning LNK4099: PDB 'vc110.pdb' não foi encontrado 'SOIL.lib(SOIL.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-SOIL.lib(stb_image_aug.obj) : warning LNK4099: PDB 'vc110.pdb' não foi encontrado 'SOIL.lib(stb_image_aug.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
-  Jogo.vcxproj -> C:\Users\SavannaDenegaMachado\source\repos\Jogo\Debug\Jogo.exe
+glfw3.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(context.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(init.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(input.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(input.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(monitor.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(monitor.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(window.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(window.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(win32_init.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(win32_init.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(win32_monitor.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(win32_time.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(win32_time.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(win32_tls.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(win32_tls.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(win32_window.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(winmm_joystick.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(winmm_joystick.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glfw3.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw.pdb' não foi encontrado 'glfw3.lib(wgl_context.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' não foi encontrado 'glew32s.lib(glew.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\vc120.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'vc110.pdb' não foi encontrado 'SOIL.lib(image_DXT.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+SOIL.lib(image_helper.obj) : warning LNK4099: PDB 'vc110.pdb' não foi encontrado 'SOIL.lib(image_helper.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+SOIL.lib(SOIL.obj) : warning LNK4099: PDB 'vc110.pdb' não foi encontrado 'SOIL.lib(SOIL.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+SOIL.lib(stb_image_aug.obj) : warning LNK4099: PDB 'vc110.pdb' não foi encontrado 'SOIL.lib(stb_image_aug.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+  Jogo.vcxproj -> C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\Jogo.exe
