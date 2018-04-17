@@ -12,4 +12,5 @@ Como configurar o ambiente:
 - Caso tenha problema com as dependencias, logo depois ao abrir o projeto no VS, faça a configuração do diretório das dependencias em:
   - Propriedades > C/C++ > Diretórios de Inclusão Adicionais > ... Adiciocione os diretórios 'GLEW/include e GLFW/include', e '/glm' da pasta /dependencies deste projeto;
   - Propriedades > Vinculador > Diretórios de Biblioteca Adicionais > ... Adiciocione os diretórios 'GLEW/lib e GLFW/lib' da pasta /dependencies deste projeto.
+  - Erros de adição de lib, vá em Propriedades > Vinculador > Entrada > adicionar os reais nomes das libs (sem vírgula, apenas com entrer entre os nomes)
 * Obs.: As propriedades do projeto já estão setadas para localizar e determinar as dependencias nos diretórios acima.
