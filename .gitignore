@@ -1,14 +1,8 @@
 v15/
 *.ipch
 ipch/
+.vs/
 
 #[Dd]ebug/
-HelloTriangle/Debug/
-
-#Pasta Debug/ para commitar apenas a glew32.dll
-HelloTriangle.exe
-HelloTriangle.ilk
-HelloTriangle.pdb
-Transforms.exe
-Transforms.ilk
-Transforms.pdb
+Jogo/Debug/
+Debug/
