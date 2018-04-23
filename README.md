@@ -1,7 +1,7 @@
 # game-opengl-pg
 Projeto de um game, destinado para realização do trabalho da disciplina de Processamento Gráfico, Unisinos 2018-1.
 
-Alunos: Pablo; Savanna.
+Alunos: Pablo; Savanna..s
 
 ------------------------------------------------------------------------------------------------------------------
 
