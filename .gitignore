@@ -6,9 +6,4 @@ ipch/
 #[Dd]ebug/
 Jogo/Debug/
 Debug/
-<<<<<<< Updated upstream
-=======
 
-#Pasta Debug/ para commitar apenas a glew32.dll
-
->>>>>>> Stashed changes
