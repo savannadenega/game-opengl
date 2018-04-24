@@ -76,11 +76,16 @@ void Game::Init()
 
 void Game::Update(GLfloat dt)
 {
+<<<<<<< Updated upstream
 
 	// Update objects
 	Ball->Move(dt, this->Width);
 	// Check for collisions
 	this->DoCollisions();
+=======
+ 
+}
+>>>>>>> Stashed changes
 
 }
 
@@ -108,8 +113,21 @@ void Game::ProcessInput(GLfloat dt)
 					Ball->Position.x += velocity;
 			}
 		}
+<<<<<<< Updated upstream
 		if (this->Keys[GLFW_KEY_SPACE])
 			Ball->Stuck = false;
+=======
+		if (this->Keys[GLFW_KEY_W])
+		{
+			if (Player->Position.y >= 0)
+				Player->Position.y -= velocity;
+		}
+		if (this->Keys[GLFW_KEY_S])
+		{
+			if (Player->Position.y <= this->Width - Player->Size.y)
+				Player->Position.y += velocity;
+		}
+>>>>>>> Stashed changes
 	}
 }
 
