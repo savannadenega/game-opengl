@@ -50,6 +50,8 @@ public:
 	void ProcessInput(GLfloat dt);
 	void Update(GLfloat dt);
 	void Render();
+	void DoCollisions();
+	GLboolean CheckCollision(GameObject &one, GameObject &two);
 };
 
 #endif
