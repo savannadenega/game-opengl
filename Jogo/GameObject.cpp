@@ -13,6 +13,19 @@
 #include "SpriteRenderer.h"
 
 
+void GameObject::Jump(GLfloat velocity)
+{
+	FramesDoPulo++;
+
+	if (Position.y > 0)
+		Position.y -= 3.0f;
+
+	if (FramesDoPulo == 5) {
+		FramesDoPulo = 0;
+		ControleMovimento = 0;
+	}
+}
+
 GameObject::GameObject()
 	: Position(0, 0), Size(1, 1), Velocity(0.0f), Color(1.0f), Rotation(0.0f), Sprite(), IsSolid(false), Destroyed(false) { }
 
