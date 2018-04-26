@@ -66,7 +66,7 @@ void Game::Init()
 	this->Levels.push_back(four);
 	this->Level = 0;
 	// Configure game objects
-	glm::vec2 playerPos = glm::vec2(this->Width / 2 - PLAYER_SIZE.x / 2, this->Height - PLAYER_SIZE.y);
+	glm::vec2 playerPos = glm::vec2(0.0f + PLAYER_SIZE.x / 2, this->Height / 2);
 	Player = new GameObject(playerPos, PLAYER_SIZE, ResourceManager::GetTexture("paddle"));
 	//Ball
 	glm::vec2 ballPos = playerPos + glm::vec2(PLAYER_SIZE.x / 2 - BALL_RADIUS, -BALL_RADIUS * 2);
@@ -120,6 +120,8 @@ void Game::Render()
 		// Draw level
 		this->Levels[this->Level].Draw(*Renderer);
 		// Draw player
+	//	Player->Position = vec2(0.5f,0.5f,);
+
 		Player->Draw(*Renderer);
 		Ball->Draw(*Renderer);
 	}

@@ -20,7 +20,7 @@ void GameObject::Jump(GLfloat velocity)
 	if (Position.y > 0)
 		Position.y -= 3.0f;
 
-	if (FramesDoPulo == 5) {
+	if (FramesDoPulo == 60) {
 		FramesDoPulo = 0;
 		ControleMovimento = 0;
 	}
