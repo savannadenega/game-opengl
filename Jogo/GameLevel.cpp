@@ -37,11 +37,11 @@ void GameLevel::Load(const GLchar *file, GLuint levelWidth, GLuint levelHeight)
 	}
 }
 
-void GameLevel::Draw(SpriteRenderer &renderer)
+void GameLevel::Draw(SpriteRenderer &renderer, GLfloat z)
 {
 	for (GameObject &tile : this->Bricks)
 		if (!tile.Destroyed)
-			tile.Draw(renderer);
+			tile.Draw(renderer, z);
 }
 
 GLboolean GameLevel::IsCompleted()

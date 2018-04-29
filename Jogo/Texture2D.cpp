@@ -23,6 +23,11 @@ void Texture2D::Generate(GLuint width, GLuint height, unsigned char* data)
 {
 	this->Width = width;
 	this->Height = height;
+
+	//Ativando transparencia
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 	// Create Texture
 	glBindTexture(GL_TEXTURE_2D, this->ID);
 	glTexImage2D(GL_TEXTURE_2D, 0, this->Internal_Format, width, height, 0, this->Image_Format, GL_UNSIGNED_BYTE, data);
@@ -33,10 +38,23 @@ void Texture2D::Generate(GLuint width, GLuint height, unsigned char* data)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, this->Filter_Max);
 	// Unbind texture
 	glBindTexture(GL_TEXTURE_2D, 0);
+
+	//Ativando transparencia
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 }
 
 void Texture2D::Bind() const
 {
+	//Ativando transparencia
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 	glBindTexture(GL_TEXTURE_2D, this->ID);
+
+	//Ativando transparencia
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 

@@ -33,11 +33,13 @@ public:
 	// Render state
 	Texture2D   Sprite;
 	// Constructor(s)
-	void Jump(GLfloat velocity);
 	GameObject();
 	GameObject(glm::vec2 pos, glm::vec2 size, Texture2D sprite, glm::vec3 color = glm::vec3(1.0f), glm::vec2 velocity = glm::vec2(0.0f, 0.0f));
 	// Draw sprite
-	virtual void Draw(SpriteRenderer &renderer);
+	virtual void Draw(SpriteRenderer &renderer, GLfloat z);
+	
+	//Passar para PlayerObject
+	void Jump(GLfloat velocity);
 	GLint FramesDoPulo = 0;
 	GLint ControleMovimento = 0;
 };

@@ -30,7 +30,7 @@ public:
 	// Loads level from file
 	void      Load(const GLchar *file, GLuint levelWidth, GLuint levelHeight);
 	// Render level
-	void      Draw(SpriteRenderer &renderer);
+	void      Draw(SpriteRenderer &renderer, GLfloat z);
 	// Check if the level is completed (all non-solid tiles are destroyed)
 	GLboolean IsCompleted();
 private:
