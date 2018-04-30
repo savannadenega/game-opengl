@@ -11,7 +11,7 @@
 PlayerObject::PlayerObject()
 	: GameObject(), Stuck(true) { }
 
-PlayerObject::PlayerObject(glm::vec2 pos, Texture2D sprite)
+PlayerObject::PlayerObject(glm::vec2 pos, Texture2D sprite, glm::vec2 posTexture)
 	: GameObject(pos,                   //posicao
 		glm::vec2(100, 20),             //size
 		sprite,                         //sprite
@@ -52,5 +52,18 @@ void PlayerObject::Reset(glm::vec2 position, glm::vec2 velocity)
 	this->Position = position;
 	this->Velocity = velocity;
 	this->Stuck = true;
+}
+
+void PlayerObject::Jump(GLfloat velocity)
+{
+		FramesDoPulo++;
+
+		if (Position.y > 0)
+			Position.y -= 3.0f;
+
+		if (FramesDoPulo == 60) {
+			FramesDoPulo = 0;
+			ControleMovimento = 0;
+		}
 }
 

@@ -24,14 +24,19 @@ class PlayerObject : public GameObject
 {
 public:
 	// Ball state	
-	GLboolean Stuck;
+	GLboolean Stuck = true;
 	// Constructor(s)
 	PlayerObject();
-	PlayerObject(glm::vec2 pos, Texture2D sprite);
+	PlayerObject(glm::vec2 pos, Texture2D sprite, glm::vec2 posTexture);
 	// Moves the ball, keeping it constrained within the window bounds (except bottom edge); returns new position
 	glm::vec2 Move(GLfloat dt, GLuint window_width);
 	// Resets the ball to original state with given position and velocity
-	void      Reset(glm::vec2 position, glm::vec2 velocity);
+	void Reset(glm::vec2 position, glm::vec2 velocity);
+	//Passar para PlayerObject
+	void Jump(GLfloat velocity);
+	GLint FramesDoPulo = 0;
+	GLint ControleMovimento = 0;
+	GLint TexturePosX = 1.0f / 3.0f;
 };
 
 #endif

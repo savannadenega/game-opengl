@@ -54,7 +54,7 @@ void Game::Init()
 	ResourceManager::LoadTexture("textures/awesomeface.png", GL_TRUE, "face");
 	ResourceManager::LoadTexture("textures/block.png", GL_TRUE, "block");
 	ResourceManager::LoadTexture("textures/block_solid.png", GL_TRUE, "block_solid");
-	ResourceManager::LoadTexture("textures/paddle.png", GL_TRUE, "paddle");
+	ResourceManager::LoadTexture("textures/Lulinha.png", GL_TRUE, "Lulinha");
 	// Set render-specific controls
 	Shader shader1 = ResourceManager::GetShader("sprite");
 	Renderer = new SpriteRenderer(shader1);
@@ -72,15 +72,15 @@ void Game::Init()
 	//Paddle
 	//glm::vec2 playerPos = glm::vec2(0.0f + PLAYER_SIZE.x / 2, this->Height / 2);
 	glm::vec2 playerPos = glm::vec2(this->Width / 8, 200);
-	Player = new PlayerObject(playerPos, ResourceManager::GetTexture("paddle"));
+	Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"), glm::vec2(1.0f/3.0f, 0.0f));
+	Player->Stuck = true;
 	//Ball
 	//glm::vec2 ballPos = playerPos + glm::vec2(PLAYER_SIZE.x / 2 - BALL_RADIUS, -BALL_RADIUS * 2);
 	//Ball = new BallObject(ballPos, BALL_RADIUS, INITIAL_BALL_VELOCITY,
 	//	ResourceManager::GetTexture("face"));
 	//Grass
 	glm::vec2 grassPos = glm::vec2(0, 636);
-	Grass = new GrassObject(grassPos,
-		ResourceManager::GetTexture("grass"));
+	Grass = new GrassObject(grassPos, ResourceManager::GetTexture("grass"));
 }
 
 void Game::Update(GLfloat dt)
@@ -95,26 +95,33 @@ void Game::ProcessInput(GLfloat dt)
 {
 	if (this->State == GAME_ACTIVE)
 	{
+
 		GLfloat velocity = PLAYER_VELOCITY * dt;
 		// Move playerboard
 
-		//if (this->Keys[GLFW_KEY_SPACE])
-		//	Ball->Stuck = false;
+		if (this->Keys[GLFW_KEY_SPACE])
+			Player->Stuck = false;
 
-		if (this->Keys[GLFW_KEY_W] or Player->ControleMovimento == 1)
-		{
-			Player->ControleMovimento = 1;
-			Player->Jump(velocity);
-		}else if (this->Keys[GLFW_KEY_S])
-		{
-			if (Player->Position.y <= this->Width - Player->Size.y)
-				Player->Position.y += velocity;
-		}
-
-		if (Player->ControleMovimento == 0) {
-			if (Player->Position.y <= this->Height - Player->Size.y) {
-				Player->Position.y += velocity;
+		if (!Player->Stuck) {
+			if (this->Keys[GLFW_KEY_W] or Player->ControleMovimento == 1)
+			{
+				Player->ControleMovimento = 1;
+				Player->Jump(velocity);
 			}
+			else if (this->Keys[GLFW_KEY_S])
+			{
+				if (Player->Position.y <= this->Width - Player->Size.y)
+					Player->Position.y += velocity;
+			}
+
+			if (Player->ControleMovimento == 0) {
+				if (Player->Position.y <= this->Height - Player->Size.y) {
+					Player->Position.y += velocity;
+				}
+			}
+			//Sempre se move para frente
+			Player->Position.x += 0.4
+				;
 		}
 	}
 }
