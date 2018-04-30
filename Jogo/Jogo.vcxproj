@@ -123,7 +123,6 @@
     <ClInclude Include="BackgroundObject.h" />
     <ClInclude Include="BallObject.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GameLevel.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GrassObject.h" />
     <ClInclude Include="GridObject.h" />
@@ -137,7 +136,6 @@
     <ClCompile Include="BackgroundObject.cpp" />
     <ClCompile Include="BallObject.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameLevel.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GrassObject.cpp" />
     <ClCompile Include="GridObject.cpp" />

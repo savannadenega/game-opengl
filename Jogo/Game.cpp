@@ -20,10 +20,12 @@
 SpriteRenderer  *Renderer;
 SpriteRenderer  *RendererPlayer;
 
-BackgroundObject *Background;
+BackgroundObject *Background1;
+BackgroundObject *Background2;
 PlayerObject    *Player;
 BallObject      *Ball;
-GrassObject     *Grass;
+GrassObject     *Grass1;
+GrassObject     *Grass2;
 
 GridObject      *Grid1A;
 GridObject      *Grid1B;
@@ -31,15 +33,11 @@ GridObject      *Grid2A;
 GridObject      *Grid2B;
 GridObject      *Grid3A;
 GridObject      *Grid3B;
-
 GridObject      *Grid4A;
 GridObject      *Grid4B;
+GridObject      *Grid5A;
+GridObject      *Grid5B;
 
-
-// Initial velocity of the Ball
-const glm::vec2 INITIAL_BALL_VELOCITY(100.0f, -350.0f);
-// Radius of the ball object
-const GLfloat BALL_RADIUS = 12.5f;
 
 Game::Game(GLuint width, GLuint height)
 	: State(GAME_ACTIVE), Keys(), Width(width), Height(height)
@@ -70,26 +68,12 @@ void Game::Init()
 
 	ResourceManager::LoadTexture("textures/GradeGrandeCima.png", GL_TRUE, "grid-GrandeCima"); //B
 	ResourceManager::LoadTexture("textures/GradePequenaBaixo.png", GL_TRUE, "grid-PequenaBaixo"); //B
-
-	ResourceManager::LoadTexture("textures/awesomeface.png", GL_TRUE, "face");
-	ResourceManager::LoadTexture("textures/block.png", GL_TRUE, "block");
-	ResourceManager::LoadTexture("textures/block_solid.png", GL_TRUE, "block_solid");
-
+	
 	ResourceManager::LoadTexture("textures/Lulinha.png", GL_TRUE, "Lulinha");
 
 	// Set render-specific controls
 	Shader shader1 = ResourceManager::GetShader("sprite");
 	Renderer = new SpriteRenderer(shader1);
-	// Load levels
-	GameLevel one; one.Load("levels/one.lvl", this->Width, this->Height * 0.5);
-	GameLevel two; two.Load("levels/two.lvl", this->Width, this->Height * 0.5);
-	GameLevel three; three.Load("levels/three.lvl", this->Width, this->Height * 0.5);
-	GameLevel four; four.Load("levels/four.lvl", this->Width, this->Height * 0.5);
-	this->Levels.push_back(one);
-	this->Levels.push_back(two);
-	this->Levels.push_back(three);
-	this->Levels.push_back(four);
-	this->Level = 0;
 
 	//Ball
 	//glm::vec2 ballPos = playerPos + glm::vec2(PLAYER_SIZE.x / 2 - BALL_RADIUS, -BALL_RADIUS * 2);
@@ -101,13 +85,19 @@ void Game::Init()
 	glm::vec2 playerPos = glm::vec2(this->Width / 8, 200);
 	Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"), glm::vec2(1.0f/3.0f, 0.0f));
 
-	//Background
-	glm::vec2 BackgroundPos = glm::vec2(0, 0);
-	Background = new BackgroundObject(BackgroundPos, glm::vec2(this->Width, this->Height), ResourceManager::GetTexture("background"));
+	//Background1
+	glm::vec2 background1Pos = glm::vec2(0, 0);
+	Background1 = new BackgroundObject(background1Pos, glm::vec2(this->Width, this->Height), ResourceManager::GetTexture("background"));
+	//Background2
+	glm::vec2 background2Pos = glm::vec2(1280, 0);
+	Background2 = new BackgroundObject(background2Pos, glm::vec2((this->Width), (this->Height)), ResourceManager::GetTexture("background"));
 
-	//Grass
-	glm::vec2 grassPos = glm::vec2(0, 636);
-	Grass = new GrassObject(grassPos, ResourceManager::GetTexture("grass"));
+	//Grass1
+	glm::vec2 grass1Pos = glm::vec2(0, 636);
+	Grass1 = new GrassObject(grass1Pos, ResourceManager::GetTexture("grass"));
+	//Grass2
+	glm::vec2 grass2Pos = glm::vec2(1280, 636);
+	Grass2 = new GrassObject(grass2Pos, ResourceManager::GetTexture("grass"));
 
 	//Grid1A
 	glm::vec2 grid1APos = glm::vec2(((this->Width / 5) * 2) - 32.5, 0);
@@ -130,13 +120,41 @@ void Game::Init()
 	glm::vec2 Grid3BPos = glm::vec2(((this->Width / 5) * 4) - 32.5, 445);
 	Grid3B = new GridObject(Grid3BPos, glm::vec2(65, 275), ResourceManager::GetTexture("grid-GrandeBaixo"));
 
+	//Grid4A
+	glm::vec2 Grid4APos = glm::vec2(((this->Width / 5) * 5), 0);
+	Grid4A = new GridObject(Grid4APos, glm::vec2(65, 275), ResourceManager::GetTexture("grid-GrandeCima"));
+	//Grid4B
+	glm::vec2 Grid4BPos = glm::vec2(((this->Width / 5) * 5), 513);
+	Grid4B = new GridObject(Grid4BPos, glm::vec2(65, 207), ResourceManager::GetTexture("grid-PequenaBaixo"));
+
+	//Grid5A
+	glm::vec2 Grid5APos = glm::vec2(((this->Width / 5) * 6) - 32.5, 0);
+	Grid5A = new GridObject(Grid5APos, glm::vec2(65, 207), ResourceManager::GetTexture("grid-PequenaCima"));
+	//Grid5B
+	glm::vec2 Grid5BPos = glm::vec2(((this->Width / 5) * 6) - 32.5, 445);
+	Grid5B = new GridObject(Grid5BPos, glm::vec2(65, 275), ResourceManager::GetTexture("grid-GrandeBaixo"));
+
 }
 
 void Game::Update(GLfloat dt)
 {
-	// Update objects
-	//Ball->Move(dt, this->Width);
-	Background->Move(dt, this->Width);
+
+	Background1->Move(Background1);
+	Background2->Move(Background2);
+
+	Grass1->Move(Grass1);
+	Grass2->Move(Grass2);
+	
+	Grid1A->Move(Grid1A);
+	Grid1B->Move(Grid1B);
+	Grid2A->Move(Grid2A);
+	Grid2B->Move(Grid2B);
+	Grid3A->Move(Grid3A);
+	Grid3B->Move(Grid3B);
+	Grid4A->Move(Grid4A);
+	Grid4B->Move(Grid4B);
+	Grid5A->Move(Grid5A);
+	Grid5B->Move(Grid5B);
 
 	// Check for collisions
 	this->DoCollisions();
@@ -151,8 +169,23 @@ void Game::ProcessInput(GLfloat dt)
 		// Move playerboard
 
 		if (this->Keys[GLFW_KEY_SPACE]) {
+			
 			Player->Stuck = false;
-			Background->Stuck = false;
+			Background1->Stuck = false;
+			Background2->Stuck = false;
+			Grass1->Stuck = false;
+			Grass2->Stuck = false;
+			Grid1A->Stuck = false;
+			Grid1B->Stuck = false;
+			Grid2A->Stuck = false;
+			Grid2B->Stuck = false;
+			Grid3A->Stuck = false;
+			Grid3B->Stuck = false;
+			Grid4A->Stuck = false;
+			Grid4B->Stuck = false;
+			Grid5A->Stuck = false;
+			Grid5B->Stuck = false;
+
 		}
 
 		if (!Player->Stuck) {
@@ -178,7 +211,7 @@ void Game::ProcessInput(GLfloat dt)
 					Player->TexturePosX -= 1.0f / 3.0f;
 			}
 			//Sempre se move para frente
-			Player->Position.x += 0.4;
+			//Player->Position.x += 0.4;
 		}
 	}
 }
@@ -191,19 +224,15 @@ void Game::Render()
 		//Texture2D texture2 = ResourceManager::GetTexture("background");
 		//Renderer->DrawSprite(texture2, glm::vec2(0, 0), 0.1f, glm::vec2(this->Width, this->Height), 0.0f);
 
-		// Draw level
-		//this->Levels[this->Level].Draw(*Renderer, 0.00f);
-		// Draw player
-		// Player->Position = vec2(0.5f,0.5f,);
-
 		Shader shader1 = ResourceManager::GetShader("sprite");
 		RendererPlayer = new SpriteRenderer(shader1, Player->TexturePosX - 1.0f/3.0f, Player->TexturePosX);
 
-		//Ball->Draw(*Renderer, 0.2f);
-
-		Background->Draw(*Renderer, 0.2f);
 		Player->Draw(*RendererPlayer, 0.2f);
-		
+		//Player->Draw(*Renderer, 0.2f);
+
+		Background1->Draw(*Renderer, 0.2f);
+		Background2->Draw(*Renderer, 0.2f);
+
 		Grid1A->Draw(*Renderer, 0.02f);
 		Grid1B->Draw(*Renderer, 0.02f);
 
@@ -213,35 +242,44 @@ void Game::Render()
 		Grid3A->Draw(*Renderer, 0.02f);
 		Grid3B->Draw(*Renderer, 0.02f);
 
-		Grass->Draw(*Renderer, 0.02f);
+		Grid4A->Draw(*Renderer, 0.02f);
+		Grid4B->Draw(*Renderer, 0.02f);
+
+		Grid5A->Draw(*Renderer, 0.02f);
+		Grid5B->Draw(*Renderer, 0.02f);
+
+		Grass1->Draw(*Renderer, 0.02f);
+		Grass2->Draw(*Renderer, 0.02f);
+
 	}
 }
 
-GLboolean Game::CheckCollision(GameObject &one, GameObject &two) // AABB - AABB collision
-{
-	// Collision x-axis?
-	bool collisionX = one.Position.x + one.Size.x >= two.Position.x &&
-		two.Position.x + two.Size.x >= one.Position.x;
-	// Collision y-axis?
-	bool collisionY = one.Position.y + one.Size.y >= two.Position.y &&
-		two.Position.y + two.Size.y >= one.Position.y;
-	// Collision only if on both axes
-	return collisionX && collisionY;
-}
 
 void Game::DoCollisions()
 {
-	for (GameObject &box : this->Levels[this->Level].Bricks)
-	{
-		if (!box.Destroyed)
-		{
+	//for (GameObject &box : this->Levels[this->Level].Bricks)
+	//{
+	//	if (!box.Destroyed)
+	//	{
 			//if (CheckCollision(*Ball, box))
 			//{
 			//	if (!box.IsSolid)
 			//		box.Destroyed = GL_TRUE;
 			//}
-		}
-	}
+		//}
+	//}
+}
+
+GLboolean Game::CheckCollision(GameObject &one, GameObject &two) // AABB - AABB collision
+{
+	// Collision x-axis?
+	GLboolean collisionX = one.Position.x + one.Size.x >= two.Position.x &&
+		two.Position.x + two.Size.x >= one.Position.x;
+	// Collision y-axis?
+	GLboolean collisionY = one.Position.y + one.Size.y >= two.Position.y &&
+		two.Position.y + two.Size.y >= one.Position.y;
+	// Collision only if on both axes
+	return collisionX && collisionY;
 }
 
 

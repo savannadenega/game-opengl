@@ -18,34 +18,20 @@ GridObject::GridObject(glm::vec2 pos, glm::vec2 size, Texture2D sprite)
 		size,                         //size
 		sprite,                       //sprite
 		glm::vec3(1.0f),              //color
-		glm::vec2(300.0f, 0.0f)),     //velocity
+		glm::vec2(0.2f, 0.0f)),       //velocity
 	Stuck(true) { }
 
-glm::vec2 GridObject::Move(GLfloat dt, GLuint window_width)
+void GridObject::Move(GridObject *grid)
 {
-	// If not stuck to player board
-	if (!this->Stuck)
-	{
-		// Move the ball
-		this->Position += this->Velocity * dt;
-		// Then check if outside window bounds and if so, reverse velocity and restore at correct position
-		if (this->Position.x <= 0.0f)
-		{
-			this->Velocity.x = -this->Velocity.x;
-			this->Position.x = 0.0f;
+
+	if (!grid->Stuck) {
+		grid->Position.x -= grid->Velocity.x;
+
+		if (grid->Position.x <= -65.0f) {
+			grid->Position.x = 1280.0f;
 		}
-		else if (this->Position.x + this->Size.x >= window_width)
-		{
-			this->Velocity.x = -this->Velocity.x;
-			this->Position.x = window_width - this->Size.x;
-		}
-		if (this->Position.y <= 0.0f)
-		{
-			this->Velocity.y = -this->Velocity.y;
-			this->Position.y = 0.0f;
-		}
+
 	}
-	return this->Position;
 }
 
 // Resets the ball to initial Stuck Position (if ball is outside window bounds)

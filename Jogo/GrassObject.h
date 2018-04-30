@@ -23,8 +23,12 @@
 class GrassObject : public GameObject
 {
 public:
+	// Ball state	
+	GLboolean Stuck;
 	// Constructor(s)
 	GrassObject(glm::vec2 pos, Texture2D sprite);
+	// Moves the ball, keeping it constrained within the window bounds (except bottom edge); returns new position
+	void      Move(GrassObject *grass);
 	// Resets the ball to original state with given position and velocity
 	void      Reset(glm::vec2 position);
 };
