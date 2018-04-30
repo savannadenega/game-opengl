@@ -83,7 +83,7 @@ void Game::Init()
 	//Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"));
 
 	//Background1
-	glm::vec2 GameOverPos = glm::vec2(0, 0);
+	glm::vec2 GameOverPos = glm::vec2(1280, 0);
 	GameOver = new GameObject(GameOverPos, glm::vec2(this->Width, this->Height), ResourceManager::GetTexture("GameOver"));
 
 	//Background1
@@ -258,7 +258,7 @@ void Game::Render()
 		Grass1->Draw(*Renderer, 0.02f);
 		Grass2->Draw(*Renderer, 0.02f);
 
-		//GameOver->Draw(*Renderer, 0.02f);
+		GameOver->Draw(*Renderer, 0.02f);
 
 	}
 }
@@ -281,7 +281,57 @@ void Game::DoCollisions()
 
 	if (CheckCollision(*Player, *Grass1))
 	{
-		Player->Displayed = true;
+		GameOver->Position.x = 0.0f;
+	}
+
+	if (CheckCollision(*Player, *Grass2))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+	if (CheckCollision(*Player, *Grass2))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+
+	if (CheckCollision(*Player, *Grid1A))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+	if (CheckCollision(*Player, *Grid1B))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+	if (CheckCollision(*Player, *Grid2A))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+	if (CheckCollision(*Player, *Grid2B))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+	if (CheckCollision(*Player, *Grid3A))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+	if (CheckCollision(*Player, *Grid3B))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+	if (CheckCollision(*Player, *Grid4A))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+	if (CheckCollision(*Player, *Grid4B))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+	if (CheckCollision(*Player, *Grid5A))
+	{
+		GameOver->Position.x = 0.0f;
+	}
+	if (CheckCollision(*Player, *Grid5B))
+	{
+		GameOver->Position.x = 0.0f;
 	}
 
 }
