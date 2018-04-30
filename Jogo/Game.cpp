@@ -119,12 +119,12 @@ void Game::ProcessInput(GLfloat dt)
 					Player->Position.y += velocity;
 				if(Player->TexturePosX >= 0.0f)
 					Player->TexturePosX -= 1.0f/3.0f;
-			}
-
-			if (Player->ControleMovimento == 0) {
+			}else if (Player->ControleMovimento == 0) {
 				if (Player->Position.y <= this->Height - Player->Size.y) {
 					Player->Position.y += velocity;
 				}
+				if (Player->TexturePosX >= 0.0f)
+					Player->TexturePosX -= 1.0f / 3.0f;
 			}
 			//Sempre se move para frente
 			Player->Position.x += 0.4
