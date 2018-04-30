@@ -36,7 +36,7 @@ public:
 	void Jump(GLfloat velocity);
 	GLint FramesDoPulo = 0;
 	GLint ControleMovimento = 0;
-	GLint TexturePosX = 1.0f / 3.0f;
+	GLfloat TexturePosX = 1.0f / 3.0f;
 };
 
 #endif

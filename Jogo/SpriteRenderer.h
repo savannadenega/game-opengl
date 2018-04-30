@@ -24,6 +24,7 @@ class SpriteRenderer
 public:
 	// Constructor (inits shaders/shapes)
 	SpriteRenderer(Shader &shader);
+	SpriteRenderer(Shader &shader, GLfloat posAnteriorX, GLfloat posX);
 	// Destructor
 	~SpriteRenderer();
 	// Renders a defined quad textured with given sprite
@@ -32,6 +33,8 @@ private:
 	// Render state
 	Shader shader;
 	GLuint quadVAO;
+	GLfloat posAnteriorX;
+	GLfloat posX;
 	// Initializes and configures the quad's buffer and vertex attributes
 	void initRenderData();
 };

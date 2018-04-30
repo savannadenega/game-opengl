@@ -14,6 +14,16 @@
 SpriteRenderer::SpriteRenderer(Shader &shader)
 {
 	this->shader = shader;
+	this->posAnteriorX = 0.0f;
+	this->posX = 1.0f;
+	this->initRenderData();
+}
+
+SpriteRenderer::SpriteRenderer(Shader &shader, GLfloat posAnteriorX, GLfloat posX)
+{
+	this->shader = shader;
+	this->posAnteriorX = posAnteriorX;
+	this->posX = posX;
 	this->initRenderData();
 }
 
@@ -36,6 +46,9 @@ void SpriteRenderer::DrawSprite(Texture2D &texture, glm::vec2 position, GLfloat 
 	model = glm::scale(model, glm::vec3(size, z)); //1.0f // Last scale
 
 	this->shader.SetMatrix4("model", model);
+
+	this->shader.SetFloat("offsetx", 1.0f/3.0f);
+	this->shader.SetFloat("offsety", 1.0f);
 
 	// Render textured quad
 	this->shader.SetVector3f("spriteColor", color);
@@ -62,13 +75,13 @@ void SpriteRenderer::initRenderData()
 	GLuint VBO;
 	GLfloat vertices[] = {
 		// Pos      // Tex
-		0.0f, 1.0f, 0.0f, 1.0f,
-		1.0f, 0.0f, 1.0f, 0.0f,
-		0.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, posAnteriorX, 1.0f,
+		1.0f, 0.0f, posX, 0.0f,
+		0.0f, 0.0f, posAnteriorX, 0.0f,
 
-		0.0f, 1.0f, 0.0f, 1.0f,
-		1.0f, 1.0f, 1.0f, 1.0f,
-		1.0f, 0.0f, 1.0f, 0.0f
+		0.0f, 1.0f, posAnteriorX, 1.0f,
+		1.0f, 1.0f, posX, 1.0f,
+		1.0f, 0.0f, posX, 0.0f
 	};
 
 	//Ativando transparencia

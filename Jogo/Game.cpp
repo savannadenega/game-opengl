@@ -18,6 +18,7 @@
 
 // Game-related State data
 SpriteRenderer  *Renderer;
+SpriteRenderer  *RendererPlayer;
 PlayerObject    *Player;
 BallObject      *Ball;
 GrassObject     *Grass;
@@ -43,6 +44,7 @@ void Game::Init()
 {
 	// Load shaders
 	ResourceManager::LoadShader("shaders/sprite.vs", "shaders/sprite.frag", nullptr, "sprite");
+	ResourceManager::LoadShader("shaders/sprite.vs", "shaders/player.frag", nullptr, "spritePlayer");
 	// Configure shaders
 	glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(this->Width), static_cast<GLfloat>(this->Height), 0.0f, -1.0f, 1.0f);
 	ResourceManager::GetShader("sprite").Use().SetInteger("sprite", 0);
@@ -107,11 +109,16 @@ void Game::ProcessInput(GLfloat dt)
 			{
 				Player->ControleMovimento = 1;
 				Player->Jump(velocity);
+				
+				if (Player->TexturePosX <= 0.0f)
+					Player->TexturePosX += 1.0f / 3.0f;
 			}
 			else if (this->Keys[GLFW_KEY_S])
 			{
 				if (Player->Position.y <= this->Width - Player->Size.y)
 					Player->Position.y += velocity;
+				if(Player->TexturePosX >= 0.0f)
+					Player->TexturePosX -= 1.0f/3.0f;
 			}
 
 			if (Player->ControleMovimento == 0) {
@@ -138,8 +145,9 @@ void Game::Render()
 		//this->Levels[this->Level].Draw(*Renderer, 0.00f);
 		// Draw player
 		// Player->Position = vec2(0.5f,0.5f,);
-
-		Player->Draw(*Renderer, 0.2f);
+		Shader shader1 = ResourceManager::GetShader("sprite");
+		RendererPlayer = new SpriteRenderer(shader1, Player->TexturePosX - 1.0f / 3.0f, Player->TexturePosX);
+		Player->Draw(*RendererPlayer, 0.2f);
 		//Ball->Draw(*Renderer, 0.2f);
 		Grass->Draw(*Renderer, 0.02f);
 	}
