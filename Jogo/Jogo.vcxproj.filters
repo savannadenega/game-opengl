@@ -97,8 +97,5 @@
     <None Include="shaders\sprite.vs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="player.frag">
-      <Filter>shaders</Filter>
-    </None>
   </ItemGroup>
 </Project>

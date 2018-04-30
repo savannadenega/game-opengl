@@ -56,7 +56,8 @@ void Game::Init()
 {
 	// Load shaders
 	ResourceManager::LoadShader("shaders/sprite.vs", "shaders/sprite.frag", nullptr, "sprite");
-	ResourceManager::LoadShader("shaders/sprite.vs", "shaders/player.frag", nullptr, "spritePlayer");
+	//ResourceManager::LoadShader("shaders/sprite.vs", "shaders/player.frag", nullptr, "spritePlayer");
+
 	// Configure shaders
 	glm::mat4 projection = glm::ortho(0.0f, static_cast<GLfloat>(this->Width), static_cast<GLfloat>(this->Height), 0.0f, -1.0f, 1.0f);
 	ResourceManager::GetShader("sprite").Use().SetInteger("sprite", 0);
@@ -266,18 +267,6 @@ void Game::Render()
 
 void Game::DoCollisions()
 {
-	//for (GameObject &box : this->Levels[this->Level].Bricks)
-	//{
-	//	if (!box.Destroyed)
-	//	{
-			//if (CheckCollision(*Ball, box))
-			//{
-			//	if (!box.IsSolid)
-			//		box.Destroyed = GL_TRUE;
-			//}
-		//}
-	//}
-
 
 	if (CheckCollision(*Player, *Grass1))
 	{

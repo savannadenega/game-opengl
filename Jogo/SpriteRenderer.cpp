@@ -19,6 +19,7 @@ SpriteRenderer::SpriteRenderer(Shader &shader)
 	this->initRenderData();
 }
 
+//Método para cortar spritesheet
 SpriteRenderer::SpriteRenderer(Shader &shader, GLfloat posAnteriorX, GLfloat posX)
 {
 	this->shader = shader;
@@ -52,10 +53,6 @@ void SpriteRenderer::DrawSprite(Texture2D &texture, glm::vec2 position, GLfloat 
 
 	// Render textured quad
 	this->shader.SetVector3f("spriteColor", color);
-
-	//Ativando transparencia
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	glActiveTexture(GL_TEXTURE0);
 	texture.Bind();
