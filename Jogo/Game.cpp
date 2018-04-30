@@ -243,7 +243,7 @@ void Game::Render()
 		Background1->Draw(*Renderer, 0.1f);
 		Background2->Draw(*Renderer, 0.1f);
 
-		Player->Draw(*RendererPlayer, 0.2f);
+		Player->DrawPlayer(*RendererPlayer, 0.2f);
 		//Player->Draw(*Renderer, 0.02f);
 
 		Grid1A->Draw(*Renderer, 0.02f);

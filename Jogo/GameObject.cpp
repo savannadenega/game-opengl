@@ -23,4 +23,8 @@ void GameObject::Draw(SpriteRenderer &renderer, GLfloat z)
 	renderer.DrawSprite(this->Sprite, this->Position, z, this->Size, this->Rotation, this->Color);
 }
 
+void GameObject::DrawPlayer(SpriteRenderer &renderer, GLfloat z)
+{
+	renderer.DrawSpritePlayer(this->Sprite, this->Position, z, this->Size, this->Rotation, this->Color);
+}
 
