@@ -23,7 +23,6 @@ SpriteRenderer  *RendererPlayer;
 BackgroundObject *Background1;
 BackgroundObject *Background2;
 PlayerObject    *Player;
-BallObject      *Ball;
 GrassObject     *Grass1;
 GrassObject     *Grass2;
 
@@ -79,10 +78,9 @@ void Game::Init()
 	Renderer = new SpriteRenderer(shader1);
 
 	//Player
-	//glm::vec2 playerPos = glm::vec2(0.0f + PLAYER_SIZE.x / 2, this->Height / 2);
-	glm::vec2 playerPos = glm::vec2(200, 0); //this->Width / 5
-	//Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"), glm::vec2(1.0f/3.0f, 0.0f));
-	Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"));
+	glm::vec2 playerPos = glm::vec2(200, 300);
+	Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"), glm::vec2(1.0f/3.0f, 0.0f));
+	//Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"));
 
 	//Background1
 	glm::vec2 GameOverPos = glm::vec2(0, 0);
@@ -217,8 +215,6 @@ void Game::ProcessInput(GLfloat dt)
 				if (Player->TexturePosX >= 0.0f)
 					Player->TexturePosX -= 1.0f / 3.0f;
 			}
-			//Sempre se move para frente
-			//Player->Position.x += 0.4;
 		}
 	}
 }
@@ -231,19 +227,18 @@ void Game::Render()
 		//Texture2D texture2 = ResourceManager::GetTexture("background");
 		//Renderer->DrawSprite(texture2, glm::vec2(0, 0), 0.1f, glm::vec2(this->Width, this->Height), 0.0f);
 
-		//Shader shader1 = ResourceManager::GetShader("sprite");
-		//RendererPlayer = new SpriteRenderer(shader1, Player->TexturePosX - 1.0f/3.0f, Player->TexturePosX);
+		Shader shader1 = ResourceManager::GetShader("sprite");
+		RendererPlayer = new SpriteRenderer(shader1, Player->TexturePosX - 1.0f/3.0f, Player->TexturePosX);
 
 		//Shader shader1 = ResourceManager::GetShader("spritePlayer");
 		//RendererPlayer = new SpriteRenderer(shader1, Player->TexturePosX - 1.0f / 3.0f, Player->TexturePosX);
 		
-		//Player->Draw(*RendererPlayer, 0.2f);
-		//Player->Draw(*Renderer, 0.2f);
 
 		Background1->Draw(*Renderer, 0.1f);
 		Background2->Draw(*Renderer, 0.1f);
 
-		Player->Draw(*Renderer, 0.02f);
+		Player->Draw(*RendererPlayer, 0.2f);
+		//Player->Draw(*Renderer, 0.02f);
 
 		Grid1A->Draw(*Renderer, 0.02f);
 		Grid1B->Draw(*Renderer, 0.02f);
