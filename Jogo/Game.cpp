@@ -38,6 +38,7 @@ GridObject      *Grid5A;
 GridObject      *Grid5B;
 
 GameObject      *GameOver;
+GameObject      *StartGame;
 
 
 Game::Game(GLuint width, GLuint height)
@@ -73,6 +74,7 @@ void Game::Init()
 	
 	ResourceManager::LoadTexture("textures/Lulinha.png", GL_TRUE, "Lulinha");
 	ResourceManager::LoadTexture("textures/GameOver.jpg", GL_TRUE, "GameOver");
+	ResourceManager::LoadTexture("textures/StartGame.jpg", GL_TRUE, "StartGame");
 
 	// Set render-specific controls
 	Shader shader1 = ResourceManager::GetShader("sprite");
@@ -83,9 +85,13 @@ void Game::Init()
 	Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"), glm::vec2(1.0f/3.0f, 0.0f));
 	//Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"));
 
-	//Background1
+	//GameOver
 	glm::vec2 GameOverPos = glm::vec2(1280, 0);
 	GameOver = new GameObject(GameOverPos, glm::vec2(this->Width, this->Height), ResourceManager::GetTexture("GameOver"));
+
+	//StartGame
+	glm::vec2 StartGamePos = glm::vec2(0, 0);
+	StartGame = new GameObject(StartGamePos, glm::vec2(this->Width, this->Height), ResourceManager::GetTexture("StartGame"));
 
 	//Background1
 	glm::vec2 background1Pos = glm::vec2(0, 0);
@@ -158,10 +164,6 @@ void Game::Update(GLfloat dt)
 	Grid5A->Move(Grid5A);
 	Grid5B->Move(Grid5B);
 
-	if (GameOver->Displayed){
-		GameOver->Position.x = 1280.0f;
-	}
-
 	// Check for collisions
 	this->DoCollisions();
 }
@@ -181,6 +183,7 @@ void Game::ProcessInput(GLfloat dt)
 
 		if (this->Keys[GLFW_KEY_SPACE]) {
 			
+			StartGame->Position.x = 1280;
 			Player->Stuck = false;
 			Background1->Stuck = false;
 			Background2->Stuck = false;
@@ -265,6 +268,7 @@ void Game::Render()
 		Grass2->Draw(*Renderer, 0.02f);
 
 		GameOver->Draw(*Renderer, 0.02f);
+		StartGame->Draw(*Renderer, 0.02f);
 
 	}
 }
