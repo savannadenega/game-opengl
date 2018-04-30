@@ -38,6 +38,8 @@ GridObject      *Grid4B;
 GridObject      *Grid5A;
 GridObject      *Grid5B;
 
+GameObject      *GameOver;
+
 
 Game::Game(GLuint width, GLuint height)
 	: State(GAME_ACTIVE), Keys(), Width(width), Height(height)
@@ -70,24 +72,25 @@ void Game::Init()
 	ResourceManager::LoadTexture("textures/GradePequenaBaixo.png", GL_TRUE, "grid-PequenaBaixo"); //B
 	
 	ResourceManager::LoadTexture("textures/Lulinha.png", GL_TRUE, "Lulinha");
+	ResourceManager::LoadTexture("textures/GameOver.jpg", GL_TRUE, "GameOver");
 
 	// Set render-specific controls
 	Shader shader1 = ResourceManager::GetShader("sprite");
 	Renderer = new SpriteRenderer(shader1);
 
-	//Ball
-	//glm::vec2 ballPos = playerPos + glm::vec2(PLAYER_SIZE.x / 2 - BALL_RADIUS, -BALL_RADIUS * 2);
-	//Ball = new BallObject(ballPos, BALL_RADIUS, INITIAL_BALL_VELOCITY,
-	//	ResourceManager::GetTexture("face"));
-
 	//Player
 	//glm::vec2 playerPos = glm::vec2(0.0f + PLAYER_SIZE.x / 2, this->Height / 2);
-	glm::vec2 playerPos = glm::vec2(this->Width / 8, 200);
-	Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"), glm::vec2(1.0f/3.0f, 0.0f));
+	glm::vec2 playerPos = glm::vec2(200, 0); //this->Width / 5
+	//Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"), glm::vec2(1.0f/3.0f, 0.0f));
+	Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"));
+
+	//Background1
+	glm::vec2 GameOverPos = glm::vec2(0, 0);
+	GameOver = new GameObject(GameOverPos, glm::vec2(this->Width, this->Height), ResourceManager::GetTexture("GameOver"));
 
 	//Background1
 	glm::vec2 background1Pos = glm::vec2(0, 0);
-	Background1 = new BackgroundObject(background1Pos, glm::vec2(this->Width, this->Height), ResourceManager::GetTexture("background"));
+	Background1 = new BackgroundObject(background1Pos, glm::vec2(1280, this->Height), ResourceManager::GetTexture("background"));
 	//Background2
 	glm::vec2 background2Pos = glm::vec2(1280, 0);
 	Background2 = new BackgroundObject(background2Pos, glm::vec2((this->Width), (this->Height)), ResourceManager::GetTexture("background"));
@@ -155,6 +158,10 @@ void Game::Update(GLfloat dt)
 	Grid4B->Move(Grid4B);
 	Grid5A->Move(Grid5A);
 	Grid5B->Move(Grid5B);
+
+	if (GameOver->Displayed){
+		GameOver->Position.x = 1280.0f;
+	}
 
 	// Check for collisions
 	this->DoCollisions();
@@ -224,14 +231,19 @@ void Game::Render()
 		//Texture2D texture2 = ResourceManager::GetTexture("background");
 		//Renderer->DrawSprite(texture2, glm::vec2(0, 0), 0.1f, glm::vec2(this->Width, this->Height), 0.0f);
 
-		Shader shader1 = ResourceManager::GetShader("sprite");
-		RendererPlayer = new SpriteRenderer(shader1, Player->TexturePosX - 1.0f/3.0f, Player->TexturePosX);
+		//Shader shader1 = ResourceManager::GetShader("sprite");
+		//RendererPlayer = new SpriteRenderer(shader1, Player->TexturePosX - 1.0f/3.0f, Player->TexturePosX);
 
-		Player->Draw(*RendererPlayer, 0.2f);
+		//Shader shader1 = ResourceManager::GetShader("spritePlayer");
+		//RendererPlayer = new SpriteRenderer(shader1, Player->TexturePosX - 1.0f / 3.0f, Player->TexturePosX);
+		
+		//Player->Draw(*RendererPlayer, 0.2f);
 		//Player->Draw(*Renderer, 0.2f);
 
-		Background1->Draw(*Renderer, 0.2f);
-		Background2->Draw(*Renderer, 0.2f);
+		Background1->Draw(*Renderer, 0.1f);
+		Background2->Draw(*Renderer, 0.1f);
+
+		Player->Draw(*Renderer, 0.02f);
 
 		Grid1A->Draw(*Renderer, 0.02f);
 		Grid1B->Draw(*Renderer, 0.02f);
@@ -251,6 +263,8 @@ void Game::Render()
 		Grass1->Draw(*Renderer, 0.02f);
 		Grass2->Draw(*Renderer, 0.02f);
 
+		//GameOver->Draw(*Renderer, 0.02f);
+
 	}
 }
 
@@ -268,6 +282,13 @@ void Game::DoCollisions()
 			//}
 		//}
 	//}
+
+
+	if (CheckCollision(*Player, *Grass1))
+	{
+		Player->Displayed = true;
+	}
+
 }
 
 GLboolean Game::CheckCollision(GameObject &one, GameObject &two) // AABB - AABB collision

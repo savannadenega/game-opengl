@@ -27,6 +27,7 @@ public:
 	GLboolean Stuck = true;
 	// Constructor(s)
 	PlayerObject();
+	PlayerObject(glm::vec2 pos, Texture2D sprite);
 	PlayerObject(glm::vec2 pos, Texture2D sprite, glm::vec2 posTexture);
 	// Moves the ball, keeping it constrained within the window bounds (except bottom edge); returns new position
 	glm::vec2 Move(GLfloat dt, GLuint window_width);

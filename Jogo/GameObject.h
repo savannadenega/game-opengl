@@ -29,7 +29,7 @@ public:
 	glm::vec3   Color;
 	GLfloat     Rotation;
 	GLboolean   IsSolid;
-	GLboolean   Destroyed;
+	GLboolean   Displayed;
 	// Render state
 	Texture2D   Sprite;
 	// Constructor(s)
