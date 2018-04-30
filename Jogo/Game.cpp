@@ -74,7 +74,9 @@ void Game::Init()
 	ResourceManager::LoadTexture("textures/awesomeface.png", GL_TRUE, "face");
 	ResourceManager::LoadTexture("textures/block.png", GL_TRUE, "block");
 	ResourceManager::LoadTexture("textures/block_solid.png", GL_TRUE, "block_solid");
+
 	ResourceManager::LoadTexture("textures/Lulinha.png", GL_TRUE, "Lulinha");
+
 	// Set render-specific controls
 	Shader shader1 = ResourceManager::GetShader("sprite");
 	Renderer = new SpriteRenderer(shader1);
@@ -176,7 +178,7 @@ void Game::ProcessInput(GLfloat dt)
 					Player->TexturePosX -= 1.0f / 3.0f;
 			}
 			//Sempre se move para frente
-			//Player->Position.x += 0.4;
+			Player->Position.x += 0.4;
 		}
 	}
 }
@@ -195,13 +197,12 @@ void Game::Render()
 		// Player->Position = vec2(0.5f,0.5f,);
 
 		Shader shader1 = ResourceManager::GetShader("sprite");
-		RendererPlayer = new SpriteRenderer(shader1, Player->TexturePosX - 1.0f / 3.0f, Player->TexturePosX);
-		Player->Draw(*RendererPlayer, 0.2f);
+		RendererPlayer = new SpriteRenderer(shader1, Player->TexturePosX - 1.0f/3.0f, Player->TexturePosX);
 
 		//Ball->Draw(*Renderer, 0.2f);
 
 		Background->Draw(*Renderer, 0.2f);
-		Player->Draw(*Renderer, 0.2f);
+		Player->Draw(*RendererPlayer, 0.2f);
 		
 		Grid1A->Draw(*Renderer, 0.02f);
 		Grid1B->Draw(*Renderer, 0.02f);
