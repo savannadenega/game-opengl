@@ -168,9 +168,14 @@ void Game::Update(GLfloat dt)
 
 void Game::ProcessInput(GLfloat dt)
 {
+	//Reset
+	if (this->Keys[GLFW_KEY_BACKSPACE] and this->State == GAME_OVER) {
+		this->Init();
+		this->State = GAME_ACTIVE;
+	}
+
 	if (this->State == GAME_ACTIVE)
 	{
-
 		GLfloat velocity = PLAYER_VELOCITY * dt;
 		// Move playerboard
 
@@ -211,7 +216,7 @@ void Game::ProcessInput(GLfloat dt)
 					Player->TexturePosX -= 1.0f/3.0f;
 			}else if (Player->ControleMovimento == 0) {
 				if (Player->Position.y <= this->Height - Player->Size.y) {
-					Player->Position.y += velocity;
+					Player->Position.y += 0.8f;
 				}
 				if (Player->TexturePosX >= 0.0f)
 					Player->TexturePosX -= 1.0f / 3.0f;
@@ -222,7 +227,7 @@ void Game::ProcessInput(GLfloat dt)
 
 void Game::Render()
 {
-	if (this->State == GAME_ACTIVE)
+	if (this->State == GAME_ACTIVE || this->State == GAME_OVER)
 	{
 		// Draw background
 		//Texture2D texture2 = ResourceManager::GetTexture("background");
@@ -271,56 +276,69 @@ void Game::DoCollisions()
 	if (CheckCollision(*Player, *Grass1))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 
 	if (CheckCollision(*Player, *Grass2))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 	if (CheckCollision(*Player, *Grass2))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 
 	if (CheckCollision(*Player, *Grid1A))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 	if (CheckCollision(*Player, *Grid1B))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 	if (CheckCollision(*Player, *Grid2A))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 	if (CheckCollision(*Player, *Grid2B))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 	if (CheckCollision(*Player, *Grid3A))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 	if (CheckCollision(*Player, *Grid3B))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 	if (CheckCollision(*Player, *Grid4A))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 	if (CheckCollision(*Player, *Grid4B))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 	if (CheckCollision(*Player, *Grid5A))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 	if (CheckCollision(*Player, *Grid5B))
 	{
 		GameOver->Position.x = 0.0f;
+		this->State = GAME_OVER;
 	}
 
 }

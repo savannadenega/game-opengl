@@ -67,9 +67,9 @@ void PlayerObject::Jump(GLfloat velocity)
 		FramesDoPulo++;
 
 		if (Position.y > 0)
-			Position.y -= 3.0f;
+			Position.y -= 1.0f;
 
-		if (FramesDoPulo == 10) {
+		if (FramesDoPulo == 6) {
 			FramesDoPulo = 0;
 			ControleMovimento = 0;
 		}
