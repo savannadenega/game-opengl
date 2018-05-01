@@ -82,7 +82,7 @@ void Game::Init()
 
 	//Player
 	glm::vec2 playerPos = glm::vec2(200, 300);
-	Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"), glm::vec2(1.0f/3.0f, 0.0f));
+	Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"));
 	//Player = new PlayerObject(playerPos, ResourceManager::GetTexture("Lulinha"));
 
 	//GameOver

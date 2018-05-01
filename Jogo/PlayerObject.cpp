@@ -19,14 +19,6 @@ PlayerObject::PlayerObject(glm::vec2 pos, Texture2D sprite)
 		glm::vec2(0.0f, 0.0f)),         //velocity
 	Stuck(true) { }
 
-PlayerObject::PlayerObject(glm::vec2 pos, Texture2D sprite, glm::vec2 posTexture)
-	: GameObject(pos,                   //posicao
-		glm::vec2(58, 100),             //size
-		sprite,                         //sprite
-		glm::vec3(1.0f),                //color
-		glm::vec2(500.0f, 0.0f)),       //velocity
-	Stuck(true) { }
-
 glm::vec2 PlayerObject::Move(GLfloat dt, GLuint window_width)
 {
 	// If not stuck to player board
