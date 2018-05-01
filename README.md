@@ -5,6 +5,13 @@ Game estilo Flappy Bird, em que usamos o contexto da política brasileira, para 
 
 Alunos: Pablo; Savanna.
 
+### Recursos utilizados
+
+- C++
+- Modern OpenGL
+- Programa Visual Studio 2017
+- Demais bibliotecas usadas com OpenGL (consultar código)
+
 ### Start Game
 
 ![StartGame](Jogo/textures/StartGame.jpg)
