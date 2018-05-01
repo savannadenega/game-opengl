@@ -121,7 +121,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BackgroundObject.h" />
-    <ClInclude Include="BallObject.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GrassObject.h" />
@@ -134,7 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackgroundObject.cpp" />
-    <ClCompile Include="BallObject.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GrassObject.cpp" />

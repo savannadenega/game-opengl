@@ -10,7 +10,6 @@
 #include "ResourceManager.h"
 #include "SpriteRenderer.h"
 #include "GameObject.h"
-#include "BallObject.h"
 #include "GrassObject.h"
 #include "PlayerObject.h"
 #include "GridObject.h"

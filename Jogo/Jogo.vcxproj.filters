@@ -36,9 +36,6 @@
     <ClInclude Include="GameObject.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="BallObject.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
     <ClInclude Include="GrassObject.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -72,9 +69,6 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="BallObject.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="GrassObject.cpp">
