@@ -1,7 +1,7 @@
 # game-opengl-pg
 Projeto de um game, destinado para realização do trabalho da disciplina de Processamento Gráfico, Unisinos 2018-1.
 
-Game estilo Flappy Bird, em que usamos o contexto da política brasileira. Para ilustrar os atuais acontecimentos.
+Game estilo Flappy Bird, em que usamos o contexto da política brasileira, para ilustrar os atuais acontecimentos.
 
 Alunos: Pablo; Savanna.
 
