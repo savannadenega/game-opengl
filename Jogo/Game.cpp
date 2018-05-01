@@ -63,8 +63,8 @@ void Game::Init()
 	ResourceManager::GetShader("sprite").Use().SetInteger("sprite", 0);
 	ResourceManager::GetShader("sprite").SetMatrix4("projection", projection);
 	// Load textures
-	ResourceManager::LoadTexture("textures/background.jpg", GL_TRUE, "background");
-	ResourceManager::LoadTexture("textures/grass.png", GL_TRUE, "grass");
+	ResourceManager::LoadTexture("textures/Background.jpg", GL_TRUE, "background");
+	ResourceManager::LoadTexture("textures/Grama.png", GL_TRUE, "grass");
 	ResourceManager::LoadTexture("textures/GradePequenaCima.png", GL_TRUE, "grid-PequenaCima"); //A
 	ResourceManager::LoadTexture("textures/GradeGrandeBaixo.png", GL_TRUE, "grid-GrandeBaixo"); //A
 
