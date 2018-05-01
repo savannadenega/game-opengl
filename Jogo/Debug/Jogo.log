@@ -1,0 +1,49 @@
+﻿  Game.cpp
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflita com uso de outras bibliotecas; use /NODEFAULTLIB:library
+ResourceManager.obj : warning LNK4049: sÝmbolo definido localmente ___glewDeleteProgram importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewAttachShader importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewCompileShader importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewCreateProgram importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewCreateShader importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewDeleteShader importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewGetProgramInfoLog importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewGetProgramiv importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewGetShaderInfoLog importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewGetShaderiv importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewGetUniformLocation importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewLinkProgram importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewShaderSource importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewUniform1f importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewUniform1i importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewUniform2f importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewUniform3f importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewUniform4f importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewUniformMatrix4fv importado
+Shader.obj : warning LNK4049: sÝmbolo definido localmente ___glewUseProgram importado
+SpriteRenderer.obj : warning LNK4049: sÝmbolo definido localmente ___glewActiveTexture importado
+SpriteRenderer.obj : warning LNK4049: sÝmbolo definido localmente ___glewBindBuffer importado
+SpriteRenderer.obj : warning LNK4049: sÝmbolo definido localmente ___glewBufferData importado
+SpriteRenderer.obj : warning LNK4049: sÝmbolo definido localmente ___glewGenBuffers importado
+SpriteRenderer.obj : warning LNK4049: sÝmbolo definido localmente ___glewEnableVertexAttribArray importado
+SpriteRenderer.obj : warning LNK4049: sÝmbolo definido localmente ___glewVertexAttribPointer importado
+SpriteRenderer.obj : warning LNK4049: sÝmbolo definido localmente ___glewBindVertexArray importado
+SpriteRenderer.obj : warning LNK4049: sÝmbolo definido localmente ___glewDeleteVertexArrays importado
+SpriteRenderer.obj : warning LNK4049: sÝmbolo definido localmente ___glewGenVertexArrays importado
+glfw3.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(context.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(init.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(input.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(input.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(monitor.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(monitor.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(window.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(window.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(win32_init.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(win32_init.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(win32_monitor.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(win32_time.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(win32_time.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(win32_tls.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(win32_tls.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(win32_window.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(winmm_joystick.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(winmm_joystick.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glfw3.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw.pdb' nÒo foi encontrado 'glfw3.lib(wgl_context.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\glfw.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' nÒo foi encontrado 'glew32s.lib(glew.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\vc120.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'vc110.pdb' nÒo foi encontrado 'SOIL.lib(image_DXT.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+SOIL.lib(image_helper.obj) : warning LNK4099: PDB 'vc110.pdb' nÒo foi encontrado 'SOIL.lib(image_helper.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+SOIL.lib(SOIL.obj) : warning LNK4099: PDB 'vc110.pdb' nÒo foi encontrado 'SOIL.lib(SOIL.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+SOIL.lib(stb_image_aug.obj) : warning LNK4099: PDB 'vc110.pdb' nÒo foi encontrado 'SOIL.lib(stb_image_aug.obj)' ou no 'C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\vc110.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+  Jogo.vcxproj -> C:\Users\SavannaDenegaMachado\source\repos\TrabalhoGA-OK\game-opengl\Debug\Jogo.exe
