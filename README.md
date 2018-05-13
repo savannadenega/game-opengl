@@ -29,9 +29,10 @@ Alunos: Pablo; Savanna.
 
 ------------------------------------------------------------------------------------------------------------------
 
-Como configurar o ambiente:
+### Como configurar o ambiente:
 
 - Faça clone do projeto;
+- Importe o projeto para o Visual Studio;
 - Depure o projeto para verificar se a versao do core está de acordo como o modelo de seu computador, caso apareça erro de shader, modifique o número versão do core na primeira linha dos arquivos `sprite.frag` e `sprite.vs`, para uma inferior, exemplo: `#version 400 core`, ou menor;
 - Caso tenha problema com as dependências, logo depois ao abrir o projeto no VS, faça a configuração do diretório das dependencias em:
 
